@@ -1,0 +1,21 @@
+
+
+
+// Get btn-primary
+const buttons = document.getElementsByClassName('btn-primary');
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', function() {
+    window.location.href = 'Palace-menu.html';
+  });
+}
+
+
+// get btn-online
+const button = document.getElementsByClassName('btn-outline');
+
+for (let i = 0; i < button.length; i++) {
+  button[i].addEventListener('click', function() {
+    window.location.href = 'About-us.html';
+  });
+}
