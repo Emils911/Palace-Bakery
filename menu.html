@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palace Bakery — Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <header class="navbar">
+    <div class="navbar__brand">
+      <div class="navbar__crown">♛</div>
+      <div class="navbar__name">
+        <span class="navbar__title">Palace</span>
+        <span class="navbar__sub">BAKERY</span>
+      </div>
+    </div>
+
+    <nav class="navbar__links">
+      <a href="/Home.html">Home</a>
+      <a href="/menu.html" class="active">Menu</a>
+      <a href="/About-us.html">About Us</a>
+      
+    </nav>
+
+    <div class="navbar__actions">
+      <button class="icon-btn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="badge">0</span>
+      </button>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════ LAYOUT ════════════════════════════════ -->
+  <div class="layout">
+
+    <!-- Sidebar overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ═══════════════════════════ SIDEBAR ══════════════════════════════ -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar__close" id="sidebarClose" aria-label="Close sidebar">✕</button>
+
+      <div class="sidebar__section">
+        <p class="sidebar__label">— BAKED GOODS —</p>
+        <ul class="sidebar__list" id="categoryList">
+          <li class="sidebar__item active" data-category="all">
+            <span class="sidebar__icon">⊞</span> All Items
+          </li>
+          <li class="sidebar__item" data-category="pies">
+            <span class="sidebar__icon">◈</span> Meat Pies
+          </li>
+          <li class="sidebar__item" data-category="pastries">
+            <span class="sidebar__icon">◇</span> Pastries
+          </li>
+          <li class="sidebar__item" data-category="breads">
+            <span class="sidebar__icon">▣</span> Breads
+          </li>
+          <li class="sidebar__item" data-category="cakes">
+            <span class="sidebar__icon">◉</span> Cakes
+          </li>
+          <li class="sidebar__item" data-category="cookies">
+            <span class="sidebar__icon">◎</span> Cookies
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar__section">
+        <p class="sidebar__label">— DRINKS —</p>
+        <ul class="sidebar__list">
+          <li class="sidebar__item" data-category="drinks">
+            <span class="sidebar__icon">◑</span> Beverages
+          </li>
+          <li class="sidebar__item" data-category="juices">
+            <span class="sidebar__icon">◐</span> Fresh Juices
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar__cta">
+        <p class="sidebar__cta-title">Custom Orders</p>
+        <p class="sidebar__cta-sub">Baked fresh for any occasion</p>
+        <button class="btn-royal">Order Now →</button>
+      </div>
+    </aside>
+
+    <!-- ═══════════════════════════ MAIN ═════════════════════════════════ -->
+    <main class="main">
+
+      <div class="main__header">
+        <div>
+          <h1 class="main__title">Our Menu</h1>
+          <div class="main__divider">
+            <span class="line"></span>
+            <span class="crown">♛</span>
+            <span class="line"></span>
+          </div>
+        </div>
+        <div class="main__sort">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect">
+            <option value="popular">Popular</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Menu sections injected by JS -->
+      <div id="menuContainer"></div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <p>No items in this category yet.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ═══════════════════════════ FOOTER BANNER ════════════════════════════ -->
+  <div class="footer-banner">
+    <div class="footer-banner__icon">🚚</div>
+    <div>
+      <p class="footer-banner__title">Freshly Baked. Delivered with Royalty.</p>
+      <p class="footer-banner__sub">Free delivery on all orders above GH₵100</p>
+    </div>
+    <button class="btn-royal">Order Now →</button>
+  </div>
+
+  <script src="/javascript/data.js"></script>
+  <script src="/javascript/app.js"></script>
+</body>
+</html>
